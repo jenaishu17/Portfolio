@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
+/* Light Theme Variables */
+:root {
+    --mainTextColor-light: #222;
+    --secondaryTextColor-light: #444;
+    --mainLinkColor-light: #007bff;
+    --mainBorderColor-light: #ccc;
+    --mainBgColor-light: #f8f9fa;
+    --cardBg-light: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --mainTextColor: #fff;
+    --secondaryTextColor: #adb0b1;
+    --mainLinkColor: #1ebed6;
+    --mainBorderColor: #2b3031;
+    --mainBgColor: #131415;
+    --cardBg: rgba(255, 255, 255, 0.1);
+    --shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* Apply Light Theme Styles */
+[data-theme="light"] {
+    --mainTextColor: var(--mainTextColor-light);
+    --secondaryTextColor: var(--secondaryTextColor-light);
+    --mainLinkColor: var(--mainLinkColor-light);
+    --mainBorderColor: var(--mainBorderColor-light);
+    --mainBgColor: var(--mainBgColor-light);
+    --cardBg: var(--cardBg-light);
+    --shadow: var(--shadow-light);
+}
+
+/* General Styles */
+* {
+    font-family: 'Readex Pro', sans-serif;
+    line-height: 1.5em;
+    box-sizing: border-box;
+    color: var(--mainTextColor);
+}
+
+body {
+    background-color: var(--mainBgColor);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Typography */
+p, span, li {
+    color: var(--secondaryTextColor);
+    font-size: 1em;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: var(--mainLinkColor);
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Layout */
+#container--main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+/* Section Styling */
+.section--page {
+    padding: 1.5em 0;
+}
+
+/* Profile */
+#wrapper--hero {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+#profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--mainLinkColor);
+}
+
+/* Social Links */
+#socials--list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#socials--list a {
+    font-weight: 400;
+    color: var(--secondaryTextColor);
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+#socials--list a:hover {
+    background: var(--mainLinkColor);
+    color: white;
+}
+
+/* Tech Stack */
+#wrapper--techstack__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.card--techstack {
+    background: var(--cardBg);
+    box-shadow: 0 4px 8px var(--shadow);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Projects */
+.card--project {
+    padding: 15px;
+    border-top: 2px solid var(--mainBorderColor);
+    background: var(--cardBg);
+    box-shadow: 0 4px 8px var(--shadow);
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.card--project:hover {
+    transform: scale(1.02);
+}
+
+.card--project a {
+    color: var(--mainTextColor);
+    transition: color 0.3s ease-in-out;
+}
+
+.card--project a:hover {
+    color: var(--mainLinkColor);
+}
+
+/* Project Showcase */
+/* Project Showcase - Display All Projects */
+.project-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.project-slide {
+    background: var(--cardBg);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px var(--shadow);
+    width: 300px; /* Adjust width as needed */
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-slide:hover {
+    transform: scale(1.05);
+}
+
+
+.project-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--mainLinkColor);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: #0056b3;
+}
+
+.prev { left: -40px; }
+.next { right: -40px; }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    color: white;
+    background: var(--mainLinkColor);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Skills & Certifications */
+.skills-list, .certifications-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li, .certifications-list li {
+    background: var(--cardBg);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+/* Education */
+.education-card {
+    background: var(--cardBg);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    border-left: 5px solid var(--mainLinkColor);
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.education-card h3 {
+    margin: 0;
+    color: var(--mainLinkColor);
+}
+
+/* Responsive Design */
+@media(max-width: 600px) {
+    .section--page {
+        padding: 1em 0;
+    }
+
+    #wrapper--hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 1em;
+    }
+
+    #profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+}
+/* Header Styling for Project Pages */
+header {
+    background: var(--cardBg);
+    text-align: center;
+    padding: 15px;
+    border-bottom: 2px solid var(--mainBorderColor);
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: var(--mainLinkColor);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.back-btn:hover {
+    background: #0056b3;
+}
+
+/* Project Details */
+.project-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.project-links a {
+    background: var(--mainLinkColor);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.project-links a:hover {
+    background: #0056b3;
+}
+
+.project-details {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.project-details li {
+    background: var(--cardBg);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
